@@ -1,6 +1,6 @@
 /*
  * This module depicts the behaviour of the edit drawer that displays the node relationship
- properties
+ *properties
  */
 
 import React, { Component } from 'react'
