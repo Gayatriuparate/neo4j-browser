@@ -1,5 +1,5 @@
 /*
- * This model depicts the behaviour of the edit drawer.
+ * This module depicts the behaviour of the edit drawer.
  */
 
 import React, { Component } from 'react'
@@ -12,7 +12,7 @@ export class EditorInfo extends Component {
     return (
       <div>
         <EditNodes
-          nodeProperties={this.props.nodeProperties._fields[0].properties}
+          selectedItem={this.props.selectedItem._fields[0].properties}
         />
       </div>
     )
@@ -20,7 +20,7 @@ export class EditorInfo extends Component {
 }
 const mapStateToProps = state => {
   return {
-    nodeProperties: state.itemEditor.selectedItem
+    selectedItem: state.itemEditor.selectedItem
   }
 }
 

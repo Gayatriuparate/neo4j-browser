@@ -1,5 +1,5 @@
 /*
- * This model depicts the behaviour of the edit drawer that displays the node relationship
+ * This module depicts the behaviour of the edit drawer that displays the node relationship
  properties
  */
 
@@ -19,9 +19,9 @@ import { getStringValue } from './utils'
 export class EditNodes extends Component {
   render () {
     let content = null
-    content = _.map(this.props.nodeProperties, (value, key) => {
+    content = _.map(this.props.selectedItem, (value, key) => {
       return (
-        <div>
+        <div key={key}>
           {key}:{getStringValue(value)}
         </div>
       )
