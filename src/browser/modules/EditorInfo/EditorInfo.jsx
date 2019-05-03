@@ -11,14 +11,16 @@ export class EditorInfo extends Component {
   render () {
     return (
       <div>
-        <EditNodes Node_properties={this.props.itemEditor} />
+        <EditNodes
+          nodeProperties={this.props.nodeProperties._fields[0].properties}
+        />
       </div>
     )
   }
 }
 const mapStateToProps = state => {
   return {
-    itemEditor: state.itemEditor.selectedItem
+    nodeProperties: state.itemEditor.selectedItem
   }
 }
 
