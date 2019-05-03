@@ -1,8 +1,8 @@
 /**
- * returns the string representation
- * of the requested node property value
+ * Given the neo4j property data type, transform the property value to string form.
  * @param value
- * value has neo4j data type
+ * Neo4j property value with valid property data type
+ * @return {string} String representation of neo4j property value if valid data type, else empty string
  */
 import { v1 as neo4j } from 'neo4j-driver'
 export const getStringValue = value => {
