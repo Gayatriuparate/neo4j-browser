@@ -12,7 +12,7 @@ export class EditorInfo extends Component {
     return (
       <div>
         <EditNodes
-          selectedItem={this.props.selectedItem._fields[0].properties}
+          nodeProperties={this.props.selectedItem._fields[0].properties}
         />
       </div>
     )

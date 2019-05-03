@@ -1,9 +1,8 @@
 /**
- * getStringValue method checks the datatype of Node properties value and return
- * convert it into an typeof node properties value. This is basically because
- * When working with Cypher query, you do not define the data type.
- * The data type that best fits your value will be chosen for you.
- * To avoid this issue we are using getStringValue() method.
+ * returns the string representation
+ * of the requested node property value
+ * @param value
+ * value has neo4j data type
  */
 import { v1 as neo4j } from 'neo4j-driver'
 export const getStringValue = value => {

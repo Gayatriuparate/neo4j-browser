@@ -19,7 +19,7 @@ import { getStringValue } from './utils'
 export class EditNodes extends Component {
   render () {
     let content = null
-    content = _.map(this.props.selectedItem, (value, key) => {
+    content = _.map(this.props.nodeProperties, (value, key) => {
       return (
         <div key={key}>
           {key}:{getStringValue(value)}
