@@ -1,7 +1,6 @@
-/*
- * This module depicts the edit drawer that displays the node relationship
- * properties
- */
+/* This module depicts the behaviour of the edit drawer that displays
+* the all drawerSections of edit drawer
+*/
 
 import React, { Component } from 'react'
 import {
