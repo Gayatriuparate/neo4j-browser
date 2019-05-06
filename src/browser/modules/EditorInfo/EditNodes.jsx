@@ -15,15 +15,22 @@ import {
 
 import * as _ from 'lodash'
 import { getStringValue } from './utils'
+import { StyledTable, StyledKey, StyledValue } from '../DatabaseInfo/styled'
 
 export class EditNodes extends Component {
   render () {
-    let content = null
-    content = _.map(this.props.nodeProperties, (value, key) => {
+    let properties = null
+    console.log('...', this.props.nodeProperties)
+    properties = _.map(this.props.nodeProperties, (value, key) => {
       return (
-        <div key={key}>
-          {key}:{getStringValue(value)}
-        </div>
+        <StyledTable>
+          <tbody>
+            <tr style={{ verticalAlign: 'baseline' }}>
+              <StyledKey key={key}>{key}:</StyledKey>
+              <StyledValue>{getStringValue(value)}</StyledValue>
+            </tr>
+          </tbody>
+        </StyledTable>
       )
     })
 
@@ -31,14 +38,8 @@ export class EditNodes extends Component {
       <Drawer id='db-drawer'>
         <DrawerHeader>Editor</DrawerHeader>
         <DrawerBody>
-          <DrawerSection>
-            <DrawerSectionBody>
-              <DrawerSubHeader>
-                properties:
-                {content}
-              </DrawerSubHeader>
-            </DrawerSectionBody>
-          </DrawerSection>
+          <DrawerSubHeader>properties</DrawerSubHeader>
+          <DrawerSectionBody>{properties}</DrawerSectionBody>
         </DrawerBody>
       </Drawer>
     )
