@@ -20,7 +20,6 @@ import { StyledTable, StyledKey, StyledValue } from '../DatabaseInfo/styled'
 export class EditNodes extends Component {
   render () {
     let properties = null
-    console.log('...', this.props.nodeProperties)
     properties = _.map(this.props.nodeProperties, (value, key) => {
       return (
         <StyledTable>
