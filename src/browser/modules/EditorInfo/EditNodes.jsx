@@ -1,5 +1,5 @@
 /*
- * This module depicts the behaviour of the edit drawer that displays the node relationship
+ * This module depicts the edit drawer that displays the node relationship
  * properties
  */
 
@@ -8,37 +8,19 @@ import {
   Drawer,
   DrawerBody,
   DrawerHeader,
-  DrawerSection,
-  DrawerSectionBody,
-  DrawerSubHeader
+  DrawerSection
 } from 'browser-components/drawer'
-
-import * as _ from 'lodash'
-import { getStringValue } from './utils'
-import { StyledTable, StyledKey, StyledValue } from '../DatabaseInfo/styled'
+import { ViewProperties } from './ViewProperties'
 
 export class EditNodes extends Component {
   render () {
-    let properties = null
-    properties = _.map(this.props.nodeProperties, (value, key) => {
-      return (
-        <StyledTable>
-          <tbody>
-            <tr style={{ verticalAlign: 'baseline' }}>
-              <StyledKey key={key}>{key}:</StyledKey>
-              <StyledValue>{getStringValue(value)}</StyledValue>
-            </tr>
-          </tbody>
-        </StyledTable>
-      )
-    })
-
     return (
       <Drawer id='db-drawer'>
         <DrawerHeader>Editor</DrawerHeader>
         <DrawerBody>
-          <DrawerSubHeader>properties</DrawerSubHeader>
-          <DrawerSectionBody>{properties}</DrawerSectionBody>
+          <DrawerSection>
+            <ViewProperties ShowProperties={this.props.nodeProperties} />
+          </DrawerSection>
         </DrawerBody>
       </Drawer>
     )
