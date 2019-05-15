@@ -17,9 +17,7 @@ export class EditNodes extends Component {
       <Drawer id='db-drawer'>
         <DrawerHeader>Editor</DrawerHeader>
         <DrawerBody>
-          <DrawerSection>
-            <ViewProperties ShowProperties={this.props.nodeProperties} />
-          </DrawerSection>
+          <ViewProperties ShowProperties={this.props.nodeProperties} />
         </DrawerBody>
       </Drawer>
     )

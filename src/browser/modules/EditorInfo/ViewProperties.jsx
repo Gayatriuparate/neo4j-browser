@@ -14,26 +14,23 @@ import * as _ from 'lodash'
 import { getStringValue } from './utils'
 import { StyledTable, StyledKey, StyledValue } from '../DatabaseInfo/styled'
 
-export class ViewProperties extends Component {
-  render () {
-    let properties = null
-    properties = _.map(this.props.ShowProperties, (value, key) => {
-      return (
-        <StyledTable>
-          <tbody>
-            <tr style={{ verticalAlign: 'baseline' }}>
-              <StyledKey key={key}>{key}:</StyledKey>
-              <StyledValue>{getStringValue(value)}</StyledValue>
-            </tr>
-          </tbody>
-        </StyledTable>
-      )
-    })
+export const ViewProperties = props => {
+  const properties = _.map(props.ShowProperties, (value, key) => {
     return (
-      <DrawerSection>
-        <DrawerSubHeader>Properties</DrawerSubHeader>
-        <DrawerSectionBody>{properties}</DrawerSectionBody>
-      </DrawerSection>
+      <StyledTable>
+        <tbody>
+          <tr style={{ verticalAlign: 'baseline' }}>
+            <StyledKey key={key}>{key}:</StyledKey>
+            <StyledValue>{getStringValue(value)}</StyledValue>
+          </tr>
+        </tbody>
+      </StyledTable>
     )
-  }
+  })
+  return (
+    <DrawerSection>
+      <DrawerSubHeader>Properties</DrawerSubHeader>
+      <DrawerSectionBody>{properties}</DrawerSectionBody>
+    </DrawerSection>
+  )
 }
