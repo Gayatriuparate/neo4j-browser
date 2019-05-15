@@ -1,4 +1,5 @@
-/* This module depicts the behaviour of the edit drawer that displays
+/**
+* This module depicts the behaviour of the edit drawer that displays
 * the all drawerSections of edit drawer
 */
 
@@ -9,7 +10,11 @@ import {
   DrawerHeader,
   DrawerSection
 } from 'browser-components/drawer'
+
 import { ViewProperties } from './ViewProperties'
+import * as _ from 'lodash'
+import { getStringValue } from './utils'
+import { EntityType } from './EntityType'
 
 export class EditNodes extends Component {
   render () {
@@ -18,6 +23,7 @@ export class EditNodes extends Component {
         <DrawerHeader>Editor</DrawerHeader>
         <DrawerBody>
           <ViewProperties ShowProperties={this.props.nodeProperties} />
+          <EntityType itemType={this.props.entityType} />
         </DrawerBody>
       </Drawer>
     )
