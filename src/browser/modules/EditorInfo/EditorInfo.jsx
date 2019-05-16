@@ -13,17 +13,28 @@ import {
   DrawerSection,
   DrawerSectionBody
 } from 'browser-components/drawer/index'
+import { EditRelationship } from './EditRelationship'
 
 export class EditorInfo extends Component {
   render () {
     return this.props.selectedItem ? (
-      <div>
+      this.props.entityType === 'node' ? (
         <EditNodes
           nodeProperties={this.props.selectedItem._fields[0].properties}
           entityType={this.props.entityType}
           nodeLabel={this.props.selectedItem._fields[0].labels}
         />
-      </div>
+      ) : (
+        <EditRelationship
+          nodeProperties={this.props.selectedItem._fields[0].properties}
+          entityType={this.props.entityType}
+          relationshipType={
+            this.props.selectedItem._fields[0].type
+              ? this.props.selectedItem._fields[0].type
+              : ''
+          }
+        />
+      )
     ) : (
       <Drawer id='db-drawer'>
         <DrawerHeader>Editor</DrawerHeader>
