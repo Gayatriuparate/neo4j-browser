@@ -17,20 +17,20 @@ import { StyledTable, StyledKey, StyledValue } from '../DatabaseInfo/styled'
 export const ViewProperties = props => {
   const properties = _.map(props.ShowProperties, (value, key) => {
     return (
-      <StyledTable>
-        <tbody>
-          <tr style={{ verticalAlign: 'baseline' }}>
-            <StyledKey key={key}>{key}:</StyledKey>
-            <StyledValue>{getStringValue(value)}</StyledValue>
-          </tr>
-        </tbody>
-      </StyledTable>
+      <tr style={{ verticalAlign: 'baseline' }}>
+        <StyledKey key={key}>{key}:</StyledKey>
+        <StyledValue>{getStringValue(value)}</StyledValue>
+      </tr>
     )
   })
   return (
     <DrawerSection>
       <DrawerSubHeader>Properties</DrawerSubHeader>
-      <DrawerSectionBody>{properties}</DrawerSectionBody>
+      <StyledTable>
+        <tbody>
+          <DrawerSectionBody>{properties}</DrawerSectionBody>
+        </tbody>
+      </StyledTable>
     </DrawerSection>
   )
 }
