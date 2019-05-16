@@ -1,4 +1,4 @@
-/*
+/**
  * This module depicts the one Section of the edit drawer that displays the node relationship
  * properties
  */
